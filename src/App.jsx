@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Home from './Pages/Home';
-import Tours from './Pages/Tours';
+import Tours from './Components/Tours';
 import NewTour from './Pages/NewTour';
 import EditTour from './Pages/EditTour';
 import TourDetails from './Pages/TourDetails';

@@ -1,23 +1,15 @@
 // src/Components/NavBar.jsx
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+export default function NavBar() {
   return (
-    <nav>
-      <h1>Spooky Travel</h1>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/tours'>Tours</Link>
-        </li>
-        <li>
-          <Link to='/tours/new'>Add New Tour</Link>
-        </li>
-      </ul>
+    <nav className='navbar'>
+      <h1>
+        <Link to='/tours'> Spooky Travel</Link>
+      </h1>
+      <button>
+        <Link to='/tours/new'> Add New Tour </Link>
+      </button>
     </nav>
   );
 }
-
-export default NavBar;
