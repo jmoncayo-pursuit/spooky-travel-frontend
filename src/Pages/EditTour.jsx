@@ -1,6 +1,5 @@
 // src/Pages/EditTour.jsx
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function EditTour() {
@@ -14,9 +13,9 @@ function EditTour() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get(`/tours/${id}`)
-      .then((response) => setTour(response.data))
+    fetch(`/tours/${id}`)
+      .then((response) => response.json())
+      .then((data) => setTour(data))
       .catch((error) => console.error('Error fetching tour:', error));
   }, [id]);
 
@@ -30,8 +29,13 @@ function EditTour() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .put(`/tours/${id}`, tour)
+    fetch(`/tours/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tour),
+    })
       .then(() => navigate(`/tours/${id}`))
       .catch((error) => console.error('Error updating tour:', error));
   };

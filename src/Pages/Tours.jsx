@@ -1,15 +1,14 @@
 // src/Pages/Tours.jsx
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function Tours() {
   const [tours, setTours] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('/tours')
-      .then((response) => setTours(response.data))
+    fetch('/tours')
+      .then((response) => response.json())
+      .then((data) => setTours(data))
       .catch((error) =>
         console.error('Error fetching tours:', error)
       );

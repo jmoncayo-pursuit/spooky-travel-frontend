@@ -1,0 +1,40 @@
+/* App.css */
+
+/* General Styling */
+body {
+  background-color: #1c1c1c; /* Dark background */
+  color: #e0e0e0; /* Light text for readability */
+  font-family: 'Creepster', cursive, sans-serif; /* Spooky font */
+  margin: 0;
+  padding: 0;
+}
+
+/* Links */
+a {
+  color: #ff6347; /* Blood red links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff4500; /* Darker red on hover */
+}
+
+/* Headers */
+h1, h2, h3 {
+  text-shadow: 2px 2px 8px #000; /* Shadow for a ghostly effect */
+}
+
+/* Buttons */
+button {
+  background-color: #333; /* Dark button */
+  border: 2px solid #ff6347; /* Blood red border */
+  color: #e0e0e0;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #ff6347;
+  color: #000;
+}

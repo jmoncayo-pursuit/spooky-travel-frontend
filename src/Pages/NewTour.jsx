@@ -1,6 +1,5 @@
 // src/Pages/NewTour.jsx
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function NewTour() {
@@ -23,8 +22,13 @@ function NewTour() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios
-      .post('/tours', tour)
+    fetch('/tours', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tour),
+    })
       .then(() => navigate('/tours'))
       .catch((error) => console.error('Error creating tour:', error));
   };
@@ -67,7 +71,7 @@ function NewTour() {
           onChange={handleChange}
         />
       </label>
-      <button type='submit'> Add Tour </button>
+      <button type='submit'>Add Tour</button>
     </form>
   );
 }
