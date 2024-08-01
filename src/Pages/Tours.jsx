@@ -7,13 +7,20 @@ const API = import.meta.env.VITE_BASE_URL;
 function Tours() {
   const [tours, setTours] = useState([]);
 
+  // Function to fetch tours from the API
+  const fetchTours = async () => {
+    try {
+      const response = await fetch(`${API}/tours`);
+      const data = await response.json();
+      setTours(data);
+    } catch (error) {
+      console.error('Error fetching tours:', error);
+    }
+  };
+
+  // Fetch tours when the component mounts and after a new tour is added
   useEffect(() => {
-    fetch(`${API}/tours`)
-      .then((response) => response.json())
-      .then((data) => setTours(data))
-      .catch((error) =>
-        console.error('Error fetching tours:', error)
-      );
+    fetchTours();
   }, []);
 
   return (

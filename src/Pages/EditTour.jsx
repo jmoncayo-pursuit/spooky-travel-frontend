@@ -41,45 +41,47 @@ function EditTour() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          type='text'
-          name='name'
-          value={tour.name}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Description:
-        <input
-          type='text'
-          name='description'
-          value={tour.description}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        URL:
-        <input
-          type='text'
-          name='url'
-          value={tour.url}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Favorite:
-        <input
-          type='checkbox'
-          name='is_favorite'
-          checked={tour.is_favorite}
-          onChange={handleChange}
-        />
-      </label>
-      <button type='submit'>Update Tour</button>
-    </form>
+    <div className='page-container'>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input
+            type='text'
+            name='name'
+            value={tour.name}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Description:
+          <input
+            type='text'
+            name='description'
+            value={tour.description}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          URL:
+          <input
+            type='text'
+            name='url'
+            value={tour.url}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Favorite:
+          <input
+            type='checkbox'
+            name='is_favorite'
+            checked={tour.is_favorite}
+            onChange={handleChange}
+          />
+        </label>
+        <button type='submit'> Update Tour </button>
+      </form>
+    </div>
   );
 }
 

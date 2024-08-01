@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-const API = import.meta.env.VITE_BASE_URL; // Add this line
+const API = import.meta.env.VITE_BASE_URL;
 
 function TourDetails() {
   const { id } = useParams();
   const [tour, setTour] = useState(null);
 
   useEffect(() => {
-    fetch(`${API}/tours/${id}`) // Use API variable here
+    fetch(`${API}/tours/${id}`)
       .then((response) => response.json())
       .then((data) => setTour(data))
       .catch((error) => console.error('Error fetching tour:', error));
@@ -21,16 +21,14 @@ function TourDetails() {
 
   return (
     <div className='page-container'>
-      {' '}
-      {/* Add page-container */}
-      <h2>{tour.name}</h2>
-      <p>{tour.description}</p>
+      <h2> {tour.name} </h2>
+      <p> {tour.description} </p>
       <p>
         <a href={tour.url} target='_blank' rel='noopener noreferrer'>
           Visit Website
         </a>
       </p>
-      <p>Favorite: {tour.is_favorite ? 'Yes' : 'No'}</p>
+      <p> Favorite: {tour.is_favorite ? 'Yes' : 'No'} </p>
     </div>
   );
 }

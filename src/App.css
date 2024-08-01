@@ -20,7 +20,9 @@ a:hover {
 }
 
 /* Headers */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-shadow: 2px 2px 8px #000; /* Shadow for a ghostly effect */
 }
 
@@ -48,6 +50,7 @@ button:hover {
   width: 100%;
   max-width: 1200px;
   margin: 20px auto; /* Center horizontally */
+  color: #ddd; /* Lighter text color for better contrast */
 }
 
 /* Navigation Bar */
