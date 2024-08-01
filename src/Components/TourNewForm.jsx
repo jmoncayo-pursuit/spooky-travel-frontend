@@ -63,12 +63,13 @@ function TourNewForm({ onTourAdded }) {
         <input
           id='url'
           type='text'
-          pattern='http[s]*://.+'
+          pattern='[^ "]+\.[^ "]+'
           required
           value={tour.url}
-          placeholder='http://'
+          placeholder='SpookyExample.com'
           onChange={handleTextChange}
         />
+
         <label htmlFor='description'>Description:</label>
         <textarea
           id='description'
