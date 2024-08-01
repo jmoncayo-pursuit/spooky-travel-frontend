@@ -3,7 +3,7 @@ import React from 'react';
 
 function Home() {
   return (
-    <div>
+    <div className='page-container'>
       <h2>Welcome to Spooky Travel</h2>
       <p>Explore the spookiest tours around the world!</p>
     </div>

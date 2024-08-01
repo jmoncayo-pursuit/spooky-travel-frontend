@@ -17,7 +17,7 @@ function Tours() {
   }, []);
 
   return (
-    <div>
+    <div className='page-container'>
       <h2>All Tours</h2>
       <ul>
         {tours.map((tour) => (
