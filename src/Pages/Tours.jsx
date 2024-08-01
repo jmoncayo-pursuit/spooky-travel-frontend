@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+const API = import.meta.env.VITE_BASE_URL;
+
 function Tours() {
   const [tours, setTours] = useState([]);
 
   useEffect(() => {
-    fetch('/tours')
+    fetch(`${API}/tours`)
       .then((response) => response.json())
       .then((data) => setTours(data))
       .catch((error) =>
