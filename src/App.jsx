@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Home from './Pages/Home';
-import Tours from './Components/Tours';
-import NewTour from './Pages/NewTour';
-import EditTour from './Pages/EditTour';
-import TourDetails from './Pages/TourDetails';
+import Index from './Pages/Index'; // Import Index
+import New from './Pages/New';
+import Edit from './Pages/Edit';
+import Show from './Pages/Show';
 import FourOFour from './Pages/FourOFour';
 
 function App() {
@@ -36,13 +36,13 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/tours' element={<Tours />} />
+          <Route path='/tours' element={<Index />} />{' '}
           <Route
             path='/tours/new'
-            element={<NewTour onTourAdded={fetchTours} />}
+            element={<New onTourAdded={fetchTours} />}
           />
-          <Route path='/tours/:id/edit' element={<EditTour />} />
-          <Route path='/tours/:id' element={<TourDetails />} />
+          <Route path='/tours/:id/edit' element={<Edit />} />
+          <Route path='/tours/:id' element={<Show />} />{' '}
           <Route path='*' element={<FourOFour />} />
         </Routes>
       </Router>
