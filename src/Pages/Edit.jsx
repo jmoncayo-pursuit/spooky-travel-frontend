@@ -1,5 +1,5 @@
 // src/Pages/Edit.jsx
-import TourEditForm from '../Components/TourEditForm';
+import { TourEditForm } from '../Components';
 
 function Edit() {
   return (
