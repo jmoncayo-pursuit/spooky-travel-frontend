@@ -66,7 +66,7 @@ function TourNewForm({ onTourAdded }) {
           pattern='[^ "]+\.[^ "]+'
           required
           value={tour.url}
-          placeholder='SpookyExample.com'
+          placeholder='SpookySite.com'
           onChange={handleTextChange}
         />
 
