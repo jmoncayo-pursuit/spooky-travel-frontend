@@ -2,9 +2,11 @@
 import React from 'react';
 
 function FourOFour() {
-  <div className='page-container'>
-    return <h2> Page Not Found </h2>;
-  </div>;
+  return (
+    <div className='page-container'>
+      <h2> Page Not Found </h2>
+    </div>
+  );
 }
 
 export default FourOFour;
