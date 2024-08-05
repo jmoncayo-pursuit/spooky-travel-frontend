@@ -27,7 +27,6 @@ function Tours() {
         <table>
           <thead>
             <tr>
-              <th>Favorite</th>
               <th>Take me there</th>
               <th>Edit this tour</th>
             </tr>

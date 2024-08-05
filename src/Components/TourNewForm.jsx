@@ -10,7 +10,6 @@ function TourNewForm({ onTourAdded }) {
     name: '',
     url: '',
     description: '',
-    is_favorite: false,
   });
 
   const addTour = async () => {
@@ -38,10 +37,6 @@ function TourNewForm({ onTourAdded }) {
     setTour({ ...tour, [event.target.id]: event.target.value });
   };
 
-  const handleCheckboxChange = () => {
-    setTour({ ...tour, is_favorite: !tour.is_favorite });
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     addTour();
@@ -63,7 +58,7 @@ function TourNewForm({ onTourAdded }) {
         <input
           id='url'
           type='text'
-          pattern='[^ "]+\.[^ "]+'
+          pattern='[^ ]+\.[^ ]+'
           required
           value={tour.url}
           placeholder='SpookySite.com'
@@ -78,13 +73,7 @@ function TourNewForm({ onTourAdded }) {
           onChange={handleTextChange}
           placeholder='Describe the tour'
         />
-        <label htmlFor='is_favorite'>Favorite:</label>
-        <input
-          id='is_favorite'
-          type='checkbox'
-          onChange={handleCheckboxChange}
-          checked={tour.is_favorite}
-        />
+
         <br />
         <input type='submit' value='Add Tour' />
       </form>

@@ -1,7 +1,6 @@
 // src/Pages/Show.jsx
 import { useParams } from 'react-router-dom';
-import TourDetails from '../Components/TourDetails';
-import TourReviews from '../Components/TourReviews';
+import TourShow from '../Components/TourShow'; 
 
 function Show() {
   const { id } = useParams();
@@ -9,8 +8,7 @@ function Show() {
   return (
     <div className='Show'>
       <h2> Tour Details </h2>
-      <TourDetails tourId={id} />
-      <TourReviews tourId={id} />
+      <TourShow id={id}/>
     </div>
   );
 }

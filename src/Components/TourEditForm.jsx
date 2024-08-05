@@ -12,15 +12,10 @@ function TourEditForm() {
     name: '',
     url: '',
     description: '',
-    is_favorite: false,
   });
 
   const handleTextChange = (event) => {
     setTour({ ...tour, [event.target.id]: event.target.value });
-  };
-
-  const handleCheckboxChange = () => {
-    setTour({ ...tour, is_favorite: !tour.is_favorite });
   };
 
   const updateTour = async () => {
@@ -94,13 +89,6 @@ function TourEditForm() {
           value={tour.description}
           onChange={handleTextChange}
           placeholder='Describe the tour'
-        />
-        <label htmlFor='is_favorite'>Favorite:</label>
-        <input
-          id='is_favorite'
-          type='checkbox'
-          onChange={handleCheckboxChange}
-          checked={tour.is_favorite}
         />
         <br />
         <input type='submit' value='Update Tour' />

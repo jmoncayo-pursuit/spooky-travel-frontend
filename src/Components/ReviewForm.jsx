@@ -8,14 +8,14 @@ function ReviewForm({
   toggleView,
   children,
 }) {
-  const { id: tourId } = useParams(); // Renamed id to tourId for clarity
+  const { id: tourId } = useParams(); 
 
   const [review, setReview] = useState({
     reviewer: '',
     title: '',
     content: '',
     rating: '',
-    tour_id: tourId, // Changed bookmark_id to tour_id
+    tour_id: tourId, 
   });
 
   const handleTextChange = (event) => {
@@ -26,11 +26,10 @@ function ReviewForm({
     if (reviewDetails) {
       setReview(reviewDetails);
     }
-  }, [tourId, reviewDetails]); // Updated dependency to tourId
-
+  }, [tourId, reviewDetails]);
   const onSubmit = (event) => {
     event.preventDefault();
-    handleSubmit(review, tourId); // Pass tourId to handleSubmit
+    handleSubmit(review, tourId); 
     if (reviewDetails) {
       toggleView();
     }
@@ -39,7 +38,7 @@ function ReviewForm({
       title: '',
       content: '',
       rating: '',
-      tour_id: tourId, // Reset tour_id after submission
+      tour_id: tourId, 
     });
   };
 
