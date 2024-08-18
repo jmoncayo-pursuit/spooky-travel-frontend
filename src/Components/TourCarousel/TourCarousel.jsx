@@ -1,5 +1,6 @@
 // src/Components/TourCarousel/TourCarousel.jsx
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import TourCard from '../TourCard/TourCard';
 import './TourCarousel.css';
 
@@ -10,9 +11,8 @@ function TourCarousel() {
   const [itemNumberValue, setItemNumberValue] = useState(3);
   const [centralItem, setCentralItem] = useState(1);
 
-  // Define calculatePercentItemNumber before using it
   const calculatePercentItemNumber = (num) => {
-    return num ? 100 / num : 100 / 3; // Default to 3 items
+    return num ? 100 / num : 100 / 3;
   };
 
   const [itemNumber, setItemNumber] = useState(
@@ -20,6 +20,7 @@ function TourCarousel() {
   );
 
   const listRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTours = async () => {
@@ -120,6 +121,7 @@ function TourCarousel() {
               tour={tour}
               width={itemNumber}
               isActive={index === centralItem}
+              tourId={tour.id}
             />
           ))}
         </div>

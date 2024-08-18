@@ -1,9 +1,11 @@
 // src/Components/TourCard/TourCard.jsx
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TourCard.css';
 
-function TourCard({ tour, width, isActive }) {
+function TourCard({ tour, width, isActive, tourId }) {
   const [imageUrl, setImageUrl] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchImage = async () => {
@@ -29,8 +31,16 @@ function TourCard({ tour, width, isActive }) {
     fetchImage();
   }, []);
 
+  const handleClick = () => {
+    navigate(`/tours/${tourId}`);
+  };
+
   return (
-    <div className='slider__item' style={{ width: `${width}%` }}>
+    <div
+      className='slider__item'
+      style={{ width: `${width}%` }}
+      onClick={handleClick}
+    >
       <div className={`slider__content ${isActive ? 'active' : ''}`}>
         <div className='slider__image'>
           <img
