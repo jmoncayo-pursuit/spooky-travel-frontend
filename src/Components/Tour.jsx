@@ -10,7 +10,7 @@ function Tour({ tour }) {
         </a>
       </td>
       <td>
-        <Link to={`/tours/${tour.id}`}>✏️</Link>
+        <Link to={`/tours/${tour.id}`}> Edit </Link>
       </td>
     </tr>
   );

@@ -1,0 +1,216 @@
+
+/* TourCard/TourCard.css */
+.slider__content {
+  height: 100%;
+  margin: 20px;
+  padding: 5%;
+  color: rgb(255, 137, 95);
+  border: 1.5px dotted rgb(255, 137, 95);
+  background-color: black;
+  box-shadow: rgba(255, 254, 254, 0.1) 0px 0px 5px 0px,
+    rgba(255, 255, 255, 0.1) 0px 0px 1px 0px;
+  filter: grayscale(100%);
+  transform: scale(0.95);
+  transition: all 0.5s ease-in;
+  overflow: hidden;
+}
+
+.slider__content p {
+  font-size: 15px;
+  line-height: 20px;
+  white-space: normal;
+}
+
+.slider__content.active {
+  box-shadow: rgba(255, 137, 95, 0.15) 0px 1px 2px,
+    rgba(255, 137, 95, 0.15) 0px 2px 4px,
+    rgba(255, 137, 95, 0.15) 0px 4px 8px,
+    rgba(255, 137, 95, 0.15) 0px 8px 16px,
+    rgba(255, 137, 95, 0.15) 0px 16px 32px,
+    rgba(255, 137, 95, 0.15) 0px 32px 64px;
+  filter: grayscale(0);
+  transform: scale(1);
+  transition: all 0.5s ease-in;
+  animation: shadow 5s ease 0s infinite;
+}
+
+.slider__content img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+
+.slider__image {
+  margin: -30px;
+}
+
+.slider__over {
+  position: relative;
+}
+
+.slider__text {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.slider__title {
+  white-space: normal;
+  font-size: 20px;
+  line-height: 22px;
+  color: white;
+}
+/* src/Components/TourCarousel/TourCarousel.css */
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px 0;
+}
+
+.slider__wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  overflow: visible;
+}
+
+.slider__item {
+  flex: 0 0 auto;
+  width: calc(100% / 2.5); /* Make the cards bigger */
+  margin: 0 15px;
+  box-sizing: border-box;
+}
+
+.slider__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+  min-height: 500px;
+  box-sizing: border-box;
+  color: rgb(255, 137, 95);
+  border: 1.5px dotted rgb(255, 137, 95);
+  box-shadow: rgba(255, 254, 254, 0.1) 0px 0px 5px 0px,
+    rgba(255, 255, 255, 0.1) 0px 0px 1px 0px;
+  filter: grayscale(100%);
+  transform: scale(0.95);
+  transition: all 0.5s ease-in;
+  overflow: hidden;
+}
+
+.slider__content.active {
+  box-shadow: rgba(255, 137, 95, 0.15) 0px 1px 2px,
+    rgba(255, 137, 95, 0.15) 0px 2px 4px,
+    rgba(255, 137, 95, 0.15) 0px 4px 8px,
+    rgba(255, 137, 95, 0.15) 0px 8px 16px,
+    rgba(255, 137, 95, 0.15) 0px 16px 32px,
+    rgba(255, 137, 95, 0.15) 0px 32px 64px;
+  filter: grayscale(0);
+  transform: scale(1);
+  animation: shadow 5s ease 0s infinite;
+}
+
+
+.slider__content:hover {
+  transform: scale(1.1);
+  filter: grayscale(0); 
+  box-shadow: rgba(255, 137, 95, 0.4) 0px 15px 30px; 
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.slider__left,
+.slider__right {
+  pointer-events: all;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider__left:hover,
+.slider__right:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.slider__left svg,
+.slider__right svg {
+  fill: #333;
+  width: 25px;
+  height: 25px;
+}
+
+.slider__words {
+  color: #000; /* Darker text color */
+  font-weight: bold; /* Make it bolder */
+  text-shadow: 2px 2px 5px #ff6347; /* Add a spooky, reddish text shadow */
+} 
+
+/* TourCard styles */
+
+.tour-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.tour-card__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.tour-card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+  color: white;
+}
+
+.tour-card__description {
+  font-size: 1.2rem;
+  color: #ddd;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+  .slider__item {
+    width: calc(100% / 1.5); /* Make cards larger on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .slider__item {
+    width: 100%; /* Full width for mobile screens */
+  }
+  .slider__content {
+    min-height: 400px; /* Adjust height for smaller screens */
+  }
+}

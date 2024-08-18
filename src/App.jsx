@@ -12,6 +12,7 @@ import New from './Pages/New';
 import Edit from './Pages/Edit';
 import Show from './Pages/Show';
 import FourOFour from './Pages/FourOFour';
+import './index.css';
 
 function App() {
   const [tours, setTours] = useState([]);

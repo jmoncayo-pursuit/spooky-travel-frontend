@@ -1,6 +1,6 @@
 // src/Components/TourEditForm.jsx
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_BASE_URL;
 
@@ -38,6 +38,22 @@ function TourEditForm() {
     }
   };
 
+  const deleteTour = async () => {
+    try {
+      const response = await fetch(`${API}/tours/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        navigate('/tours'); // Redirect to the tours list after deletion
+      } else {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+    } catch (error) {
+      console.error('Error deleting tour:', error);
+    }
+  };
+
   useEffect(() => {
     const fetchTour = async () => {
       try {
@@ -60,6 +76,12 @@ function TourEditForm() {
     updateTour();
   };
 
+  const handleGoBack = () => {
+    console.log('Go Back button clicked - start');
+    navigate(-1);
+    console.log('Go Back button clicked - end');
+  };
+
   return (
     <div className='Edit'>
       <form onSubmit={handleSubmit}>
@@ -76,10 +98,9 @@ function TourEditForm() {
         <input
           id='url'
           type='text'
-          pattern='http[s]*://.+'
           required
           value={tour.url}
-          placeholder='http://'
+          placeholder='SpookySite.com'
           onChange={handleTextChange}
         />
         <label htmlFor='description'>Description:</label>
@@ -93,9 +114,8 @@ function TourEditForm() {
         <br />
         <input type='submit' value='Update Tour' />
       </form>
-      <Link to={`/tours/${id}`}>
-        <button>Nevermind!</button>
-      </Link>
+      <button onClick={handleGoBack}>Go Back</button>
+      <button onClick={deleteTour}>Delete Tour</button>
     </div>
   );
 }

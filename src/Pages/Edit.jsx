@@ -23,12 +23,12 @@ const Edit = () => {
   }, [id]);
 
   if (!tour) {
-    return <div>Loading...</div>;
+    return <div> Loading... </div>;
   }
 
   return (
     <div>
-      <h1>Edit Tour: {tour.name}</h1>
+      <h1> Edit Tour: {tour.name} </h1>
       <TourDetails tourId={id} />
     </div>
   );

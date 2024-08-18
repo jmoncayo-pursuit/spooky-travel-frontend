@@ -45,7 +45,7 @@ function TourNewForm({ onTourAdded }) {
   return (
     <div className='New'>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='name'>Name:</label>
+        <label htmlFor='name'> Name: </label>
         <input
           id='name'
           value={tour.name}
@@ -54,7 +54,7 @@ function TourNewForm({ onTourAdded }) {
           placeholder='Name of Tour'
           required
         />
-        <label htmlFor='url'>URL:</label>
+        <label htmlFor='url'> URL: </label>
         <input
           id='url'
           type='text'
@@ -65,7 +65,7 @@ function TourNewForm({ onTourAdded }) {
           onChange={handleTextChange}
         />
 
-        <label htmlFor='description'>Description:</label>
+        <label htmlFor='description'> Description: </label>
         <textarea
           id='description'
           name='description'
@@ -75,7 +75,7 @@ function TourNewForm({ onTourAdded }) {
         />
 
         <br />
-        <input type='submit' value='Add Tour' />
+        <input className= 'button' type='submit' value='Add Tour' />
       </form>
     </div>
   );

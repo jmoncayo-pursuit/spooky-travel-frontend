@@ -1,0 +1,47 @@
+/* src/Components/TourCarousel/TourCarousel.css */
+.slider {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider__wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+  overflow: visible;
+}
+
+.slider__item {
+  width: calc(100% / 2.5);
+  margin: 0 15px;
+}
+
+.slider__controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider__left, .slider__right {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .slider__item {
+    width: calc(100% / 1.5); /* Adjust item size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .slider__item {
+    width: 100%; /* Full width for mobile */
+  }
+}

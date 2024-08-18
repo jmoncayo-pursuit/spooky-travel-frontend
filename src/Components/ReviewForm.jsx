@@ -87,8 +87,7 @@ function ReviewForm({
         />
 
         <br />
-
-        <input type='submit' value='Submit Review' />
+        <button type='submit'>Submit Review</button>
       </form>
     </div>
   );
