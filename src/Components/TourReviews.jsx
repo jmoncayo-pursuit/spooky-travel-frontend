@@ -10,19 +10,22 @@ const TourReviews = ({ tourId }) => {
     const fetchReviews = async () => {
       try {
         const response = await fetch(
-          `${API}/tours/${tourId}/reviews`
+          `${API}/tours/${tourId}/reviews`,
+          {
+            method: 'GET',
+            headers: {
+              'Cache-Control': 'no-store', // Prevent caching
+              'Content-Type': 'application/json',
+            },
+          }
         );
-        const data = await response.json();
 
-        // Check if data is an array or an object
-        if (Array.isArray(data)) {
-          setReviews(data);
-        } else if (data.reviews && Array.isArray(data.reviews)) {
-          setReviews(data.reviews);
-        } else {
-          console.error('Unexpected data format:', data);
-          setReviews([]);
+        if (!response.ok) {
+          throw new Error('Failed to fetch reviews');
         }
+
+        const data = await response.json();
+        setReviews(data.reviews); // Ensure reviews array is being set
       } catch (error) {
         console.error('Error fetching reviews:', error);
         setReviews([]);
@@ -31,10 +34,6 @@ const TourReviews = ({ tourId }) => {
 
     fetchReviews();
   }, [tourId]);
-
-  if (!Array.isArray(reviews)) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div>
@@ -49,7 +48,7 @@ const TourReviews = ({ tourId }) => {
             </li>
           ))
         ) : (
-          <p>No reviews available</p>
+          <p>No reviews available.</p>
         )}
       </ul>
     </div>

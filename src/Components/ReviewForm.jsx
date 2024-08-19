@@ -8,14 +8,14 @@ function ReviewForm({
   toggleView,
   children,
 }) {
-  const { id: tourId } = useParams(); 
+  const { id: tourId } = useParams();
 
   const [review, setReview] = useState({
     reviewer: '',
     title: '',
     content: '',
     rating: '',
-    tour_id: tourId, 
+    tour_id: tourId,
   });
 
   const handleTextChange = (event) => {
@@ -27,9 +27,10 @@ function ReviewForm({
       setReview(reviewDetails);
     }
   }, [tourId, reviewDetails]);
+
   const onSubmit = (event) => {
     event.preventDefault();
-    handleSubmit(review, tourId); 
+    handleSubmit(review, tourId);
     if (reviewDetails) {
       toggleView();
     }
@@ -38,7 +39,7 @@ function ReviewForm({
       title: '',
       content: '',
       rating: '',
-      tour_id: tourId, 
+      tour_id: tourId,
     });
   };
 
@@ -85,7 +86,6 @@ function ReviewForm({
           placeholder='Write your review here...'
           onChange={handleTextChange}
         />
-
         <br />
         <button type='submit'>Submit Review</button>
       </form>

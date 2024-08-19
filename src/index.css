@@ -79,16 +79,26 @@ button:hover {
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #000;
-  padding: 5px; /* Reduced padding */
+  padding: 5px;
   border-bottom: 3px solid #ff6347;
   border-radius: 15px;
-  height: 12.5vh; /* Set height to 1/8 of viewport height */
+  height: 12.5vh; 
+}
+
+.navbar-link {
+  text-decoration: none; 
+  color: inherit; 
+  font-size: 1.5em; 
 }
 
 .navbar > button { 
-  display: none; /* Hide the "Add Tour" button */
-  
+  display: inline-block; 
+  padding: 0;
+  font-size: smallest;
 }
 
 .footer {

@@ -12,7 +12,15 @@ const TourDetails = ({ tourId }) => {
   useEffect(() => {
     const fetchTour = async () => {
       try {
-        const response = await fetch(`${API}/tours/${tourId}`);
+        const response = await fetch(`${API}/tours/${tourId}`, {
+          headers: {
+            'Cache-Control': 'no-cache', // Prevent cached response
+            Pragma: 'no-cache',
+          },
+        });
+        if (!response.ok) {
+          throw new Error('Failed to fetch tour');
+        }
         const data = await response.json();
         setTour(data);
       } catch (error) {
