@@ -130,31 +130,31 @@ const TourShow = () => {
         />
       ) : (
         <div className='tour-card'>
-          <img
+          {/* <img
             src={tour.imageUrl}
             alt={tour.name}
             className='tour-image'
-          />
+          /> */}
           <div className='tour-content'>
             <h1 className='tour-name'>{tour.name}</h1>
-            <p className='tour-rating'>Rating: {tour.rating}</p>{' '}
+            {/* <p className='tour-rating'>Rating: {tour.rating}</p>{' '} */}
             <p className='tour-desc'>{tour.description}</p>
-            <h2>Reviews</h2>
-            <ReviewForm handleSubmit={handleSubmit} />
             <ul>
               {Array.isArray(reviews) && reviews.length > 0 ? (
                 reviews.map((review) => (
                   <Review
-                    key={review.id}
-                    review={review}
-                    handleDelete={handleDelete}
-                    handleSubmit={handleSubmit}
+                  key={review.id}
+                  review={review}
+                  handleDelete={handleDelete}
+                  handleSubmit={handleSubmit}
                   />
                 ))
               ) : (
                 <p> No reviews available </p>
               )}
             </ul>
+            <h2>Reviews</h2>
+            <ReviewForm handleSubmit={handleSubmit} />
             <button
               className='return-button'
               onClick={() => navigate(-1)}
